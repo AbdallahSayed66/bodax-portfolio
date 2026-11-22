@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>عبدالله سيد — Bodax | مصمم جرافيك</title>
+<meta name="description" content="عبدالله سيد (Bodax) — مصمم جرافيك متخصص في السوشيال ميديا، ثامبنيلز يوتيوب، والمحتوى التعليمي. Portfolio 2026.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0908'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-size='26' font-weight='900' fill='%23f0a35c' text-anchor='middle'%3EBX%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Archivo:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0908; --bg2:#121010; --panel:#171412;
+  --ink:#f4eee3; --ink-dim:#b8ad9c; --ink-faint:#7d7466;
+  --gold:#f0a35c; --gold2:#e8833a; --burg:#6e1e2e; --blue:#4d9dc4;
+  --line:rgba(244,238,227,.09);
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Cairo',system-ui,sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+.en{font-family:'Archivo','Cairo',sans-serif}
+::selection{background:var(--gold); color:#1a0f08}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ---------- Preloader ---------- */
+#loader{
+  position:fixed; inset:0; z-index:200; background:var(--bg);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:14px;
+  transition:transform .7s cubic-bezier(.76,0,.24,1), opacity .5s;
+}
+#loader.done{transform:translateY(-101%); opacity:.98; pointer-events:none}
+#loader .bx{
+  font-family:'Archivo'; font-weight:900; font-size:clamp(56px,14vw,110px);
+  letter-spacing:-.03em; color:var(--ink);
+  animation:bxpulse 1s ease-in-out infinite alternate;
+}
+#loader .bx span{color:var(--gold)}
+@keyframes bxpulse{from{opacity:.55; transform:scale(.97)}to{opacity:1; transform:scale(1)}}
+#loader .bar{width:min(240px,60vw); height:2px; background:var(--line); overflow:hidden; border-radius:2px}
+#loader .bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--gold2),var(--gold)); transition:width .25s}
+#loader .pct{font-family:'Archivo'; font-size:12px; letter-spacing:.35em; color:var(--ink-faint)}
+
+/* ---------- Nav ---------- */
+nav{
+  position:fixed; top:0; right:0; left:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px clamp(16px,4vw,44px);
+  background:linear-gradient(180deg, rgba(10,9,8,.85), rgba(10,9,8,0));
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+}
+.logo{font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-.02em}
+.logo span{color:var(--gold)}
+nav .links{display:flex; gap:clamp(14px,3vw,30px); font-size:14px; font-weight:700; color:var(--ink-dim)}
+nav .links a{transition:color .25s}
+nav .links a:hover{color:var(--gold)}
+@media(max-width:640px){ nav .links a:nth-child(2){display:none} }
+
+/* ---------- Hero ---------- */
+header{
+  position:relative; min-height:100svh;
+  display:flex; align-items:center;
+  padding:110px clamp(18px,5vw,60px) 60px;
+  isolation:isolate; overflow:hidden;
+}
+.hero-bg{position:absolute; inset:0; z-index:-2}
+.blob{position:absolute; border-radius:50%; filter:blur(90px); opacity:.5; will-change:transform}
+.b1{width:46vw;height:46vw;min-width:340px;min-height:340px;background:radial-gradient(circle,#6e1e2e 0%,transparent 65%);top:-12%;inset-inline-start:-8%;animation:drift1 14s ease-in-out infinite alternate}
+.b2{width:38vw;height:38vw;min-width:280px;min-height:280px;background:radial-gradient(circle,#7a4416 0%,transparent 65%);bottom:-14%;inset-inline-end:-6%;animation:drift2 18s ease-in-out infinite alternate}
+.b3{width:26vw;height:26vw;min-width:200px;min-height:200px;background:radial-gradient(circle,#17384a 0%,transparent 65%);top:38%;inset-inline-end:22%;animation:drift1 22s ease-in-out infinite alternate-reverse}
+@keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,5vh) scale(1.12)}}
+@keyframes drift2{from{transform:translate(0,0) scale(1.05)}to{transform:translate(-5vw,-6vh) scale(.95)}}
+.grain{position:absolute;inset:0;z-index:-1;opacity:.5;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");}
+
+.hero-work{
+  position:absolute; inset:0; z-index:-1; display:flex; gap:14px;
+  justify-content:center; opacity:.34;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 72%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 72%,transparent 100%);
+}
+.hero-work::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,8,.94) 0%,rgba(10,9,8,.55) 45%,rgba(10,9,8,.94) 100%)}
+.col{display:flex;flex-direction:column;gap:14px;width:clamp(120px,17vw,230px);flex:none;animation:scrollcol var(--dur,40s) linear infinite}
+.col.rev{animation-direction:reverse}
+.col img{border-radius:12px;width:100%}
+@keyframes scrollcol{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@media(max-width:640px){ .hero-work{opacity:.26} .col:nth-child(4){display:none} }
+
+.hero-inner{position:relative; max-width:1200px; margin:0 auto; width:100%}
+.kicker{
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--line); border-radius:999px;
+  padding:7px 16px; font-size:13px; font-weight:700; color:var(--ink-dim);
+  background:rgba(23,20,18,.55); backdrop-filter:blur(6px);
+}
+.kicker i{width:7px;height:7px;border-radius:50%;background:#63d68a;box-shadow:0 0 10px #63d68a;animation:blink 2.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+h1{
+  margin:22px 0 6px;
+  font-size:clamp(44px,10.5vw,116px); font-weight:900; line-height:1.04; letter-spacing:-.01em;
+}
+h1 .word{display:inline-block; overflow:hidden; vertical-align:bottom}
+h1 .word b{display:inline-block; font-weight:900; transform:translateY(110%); animation:rise .9s cubic-bezier(.22,1,.36,1) forwards}
+h1 .word:nth-child(2) b{animation-delay:.12s}
+h1 .word:nth-child(3) b{animation-delay:.24s}
+@keyframes rise{to{transform:translateY(0)}}
+h1 .latin{
+  display:block; font-family:'Archivo'; font-size:clamp(15px,3vw,30px); font-weight:800;
+  letter-spacing:.42em; color:var(--gold); margin-top:14px;
+}
+.tagline{
+  margin-top:18px; font-size:clamp(16px,2.6vw,22px); font-weight:600; color:var(--ink-dim); max-width:620px; line-height:1.85;
+}
+.tagline b{color:var(--ink)}
+.ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:15px 30px; border-radius:999px; font-weight:800; font-size:16px;
+  transition:transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s, background .25s;
+  will-change:transform;
+}
+.btn:active{transform:scale(.97)}
+.btn-p{background:linear-gradient(120deg,var(--gold2),var(--gold)); color:#1c0f06; box-shadow:0 8px 30px -8px rgba(232,131,58,.55)}
+.btn-p:hover{transform:translateY(-3px); box-shadow:0 16px 42px -8px rgba(232,131,58,.65)}
+.btn-g{border:1px solid var(--line); color:var(--ink); background:rgba(23,20,18,.5); backdrop-filter:blur(6px)}
+.btn-g:hover{transform:translateY(-3px); border-color:rgba(240,163,92,.5)}
+.hero-meta{display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:44px; color:var(--ink-faint); font-size:13.5px; font-weight:700}
+.hero-meta span{display:inline-flex; align-items:center; gap:8px}
+.hero-meta svg{flex:none}
+.scroll-hint{position:absolute; bottom:26px; inset-inline-start:50%; transform:translateX(50%); color:var(--ink-faint); font-size:11px; letter-spacing:.3em; font-family:'Archivo'; display:flex; flex-direction:column; align-items:center; gap:8px}
+.scroll-hint::after{content:""; width:1px; height:44px; background:linear-gradient(180deg,var(--gold),transparent); animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{from{transform:scaleY(0); transform-origin:top}to{transform:scaleY(1); transform-origin:top}}
+
+/* ---------- Marquee ---------- */
+.marquee{
+  border-block:1px solid var(--line); background:var(--bg2);
+  overflow:hidden; padding:16px 0; direction:ltr;
+}
+.marquee .track{display:flex; gap:44px; width:max-content; animation:mq 26s linear infinite; white-space:nowrap}
+.marquee span{font-family:'Archivo'; font-weight:800; font-size:15px; letter-spacing:.28em; color:var(--ink-faint)}
+.marquee span.g{color:var(--gold)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section{padding:clamp(60px,9vw,110px) clamp(18px,5vw,60px); max-width:1280px; margin:0 auto}
+.sec-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:38px; flex-wrap:wrap}
+.sec-head h2{font-size:clamp(30px,5.5vw,52px); font-weight:900; line-height:1.15}
+.sec-head h2 small{display:block; font-family:'Archivo'; font-size:clamp(11px,1.6vw,14px); letter-spacing:.4em; color:var(--gold); font-weight:800; margin-bottom:10px}
+.sec-head p{color:var(--ink-dim); font-size:15px; max-width:420px; line-height:1.9}
+
+/* filters */
+.filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:30px}
+.chip{
+  border:1px solid var(--line); background:transparent; color:var(--ink-dim);
+  font-family:'Cairo'; font-weight:700; font-size:14px;
+  padding:9px 20px; border-radius:999px; cursor:pointer; transition:all .25s;
+}
+.chip:hover{color:var(--ink); border-color:rgba(240,163,92,.4)}
+.chip.on{background:linear-gradient(120deg,var(--gold2),var(--gold)); color:#1c0f06; border-color:transparent; font-weight:800}
+
+/* gallery */
+#grid{columns:2; column-gap:16px}
+@media(min-width:760px){#grid{columns:3; column-gap:20px}}
+@media(min-width:1120px){#grid{columns:4}}
+.card{
+  position:relative; break-inside:avoid; margin-bottom:16px; border-radius:var(--r); overflow:hidden;
+  border:1px solid var(--line); background:var(--panel); cursor:zoom-in;
+  transform:translateY(0); transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s, border-color .4s;
+  opacity:0; translate:0 26px;
+}
+.card.shown{opacity:1; translate:0 0; transition:opacity .6s ease, translate .6s cubic-bezier(.22,1,.36,1), transform .4s, box-shadow .4s, border-color .4s}
+.card:hover{transform:translateY(-6px); border-color:rgba(240,163,92,.45); box-shadow:0 24px 50px -18px rgba(0,0,0,.8)}
+.card img{width:100%; transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.card:hover img{transform:scale(1.045)}
+.card .cap{
+  position:absolute; inset-inline:0; bottom:0; padding:34px 14px 12px;
+  background:linear-gradient(0deg, rgba(8,7,6,.92), transparent);
+  font-size:13px; font-weight:700; color:var(--ink);
+  opacity:0; transform:translateY(8px); transition:all .35s;
+  display:flex; justify-content:space-between; align-items:center; gap:8px;
+}
+.card:hover .cap{opacity:1; transform:translateY(0)}
+.card .cap em{font-style:normal; font-family:'Archivo'; font-size:10px; letter-spacing:.22em; color:var(--gold)}
+.card.hide{display:none}
+@media(max-width:640px){.card{margin-bottom:12px}}
+
+/* lightbox */
+#lb{position:fixed; inset:0; z-index:150; background:rgba(6,5,4,.94); backdrop-filter:blur(10px);
+  display:none; align-items:center; justify-content:center; flex-direction:column; padding:20px}
+#lb.open{display:flex}
+#lb img{max-width:min(94vw,1100px); max-height:78svh; border-radius:14px; box-shadow:0 30px 80px rgba(0,0,0,.7)}
+#lb .lb-cap{margin-top:16px; font-weight:700; color:var(--ink-dim); font-size:14px}
+#lb .lb-tools{position:absolute; top:18px; inset-inline:18px; display:flex; justify-content:space-between}
+#lb button{
+  background:rgba(23,20,18,.8); border:1px solid var(--line); color:var(--ink);
+  width:46px;height:46px;border-radius:50%; font-size:20px; cursor:pointer; transition:all .25s;
+}
+#lb button:hover{border-color:var(--gold); color:var(--gold)}
+#lb .navb{position:absolute; top:50%; transform:translateY(-50%)}
+#lb .prev{inset-inline-start:14px} #lb .next{inset-inline-end:14px}
+
+/* ---------- About ---------- */
+.about-wrap{display:grid; gap:36px; grid-template-columns:1fr}
+@media(min-width:900px){.about-wrap{grid-template-columns:1.2fr .8fr; gap:60px; align-items:start}}
+.about-txt p{color:var(--ink-dim); font-size:16.5px; line-height:2.05; margin-bottom:18px}
+.about-txt b{color:var(--ink)}
+.skills{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+.skill{border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:10px 16px; font-size:13.5px; font-weight:700; color:var(--ink-dim); transition:all .25s}
+.skill:hover{color:var(--gold); border-color:rgba(240,163,92,.4); transform:translateY(-2px)}
+.xp{display:flex; flex-direction:column; gap:14px}
+.xp-item{
+  border:1px solid var(--line); border-radius:var(--r); padding:22px;
+  background:linear-gradient(160deg, var(--panel), rgba(23,20,18,.4));
+  transition:border-color .3s;
+}
+.xp-item:hover{border-color:rgba(240,163,92,.35)}
+.xp-item .role{font-weight:800; font-size:17px}
+.xp-item .where{color:var(--gold); font-weight:700; font-size:14px; margin-top:3px}
+.xp-item .when{font-family:'Archivo'; font-size:11px; letter-spacing:.25em; color:var(--ink-faint); margin-top:8px}
+.xp-item p{color:var(--ink-dim); font-size:14px; line-height:1.9; margin-top:10px}
+
+/* ---------- Contact ---------- */
+#contact{text-align:center; padding-bottom:80px}
+#contact h2{font-size:clamp(34px,7vw,72px); font-weight:900; line-height:1.2}
+#contact h2 span{color:var(--gold)}
+#contact p{color:var(--ink-dim); margin:18px auto 34px; max-width:520px; line-height:1.95; font-size:16px}
+.socials{display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:30px}
+.soc{
+  display:inline-flex; align-items:center; gap:9px;
+  border:1px solid var(--line); border-radius:999px; padding:12px 22px;
+  font-weight:700; font-size:14px; color:var(--ink-dim); transition:all .25s; background:var(--panel);
+}
+.soc:hover{color:var(--ink); border-color:rgba(240,163,92,.5); transform:translateY(-3px)}
+.soc svg{width:17px; height:17px; fill:currentColor}
+footer{
+  border-top:1px solid var(--line); padding:26px clamp(18px,5vw,60px);
+  display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+  color:var(--ink-faint); font-size:13px;
+}
+footer .logo{font-size:20px}
+
+/* reveal */
+.rv{opacity:0; translate:0 30px; transition:opacity .7s ease, translate .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1; translate:0 0}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  .card,.rv{opacity:1; translate:0 0}
+  h1 .word b{transform:none; animation:none}
+  #loader{display:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div class="bx en">B<span>X</span></div>
+  <div class="bar"><i id="lbar"></i></div>
+  <div class="pct en" id="lpct">0%</div>
+</div>
+
+<nav>
+  <a class="logo en" href="#top">B<span>X</span></a>
+  <div class="links">
+    <a href="#work">الأعمال</a>
+    <a href="#about">عنّي</a>
+    <a href="#contact">تواصل</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-bg">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  </div>
+  <div class="hero-work" id="heroWork" aria-hidden="true"></div>
+  <div class="grain"></div>
+
+  <div class="hero-inner">
+    <span class="kicker"><i></i> متاح لشغل فري لانس وريموت</span>
+    <h1>
+      <span class="word"><b>عبدالله</b></span>
+      <span class="word"><b>سيد</b></span>
+      <span class="latin en">GRAPHIC DESIGNER — BODAX</span>
+    </h1>
+    <p class="tagline">
+      مصمم جرافيك متخصص في <b>تصميم السوشيال ميديا</b> و<b>ثامبنيلز اليوتيوب</b> والمحتوى التعليمي.
+      بشتغل بالفوتوشوب لحد ما الصورة تحكي القصة بنفسها — <b>الشكل الحلو وسيلة، مش هدف.</b>
+    </p>
+    <div class="ctas">
+      <a class="btn btn-p" href="#work">شوف الشغل ↓</a>
+      <a class="btn btn-g" href="mailto:abdallah.sayed.boda66@gmail.com">تواصل معايا</a>
+    </div>
+    <div class="hero-meta">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0a35c" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.5-6.3 4.5L8 13.8 2 9.2h7.6z"/></svg>
+        فري لانس من ٢٠٢٤
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0a35c" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        Social Media Designer — Teacher Planet
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0a35c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20"/></svg>
+        القاهرة، مصر — شغل عن بُعد
+      </span>
+    </div>
+  </div>
+  <div class="scroll-hint en">SCROLL</div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mqTrack">
+    <span>SOCIAL MEDIA</span><span class="g">•</span><span>YOUTUBE THUMBNAILS</span><span class="g">•</span><span>PHOTO MANIPULATION</span><span class="g">•</span><span>EDUCATIONAL CONTENT</span><span class="g">•</span><span>AD CREATIVES</span><span class="g">•</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="sec-head rv">
+    <h2><small class="en">SELECTED WORK</small>شغل مختار</h2>
+    <p>كل قطعة هنا اتعملت بإيدي من الأول للآخر — كونسبت، دمج صور، إضاءة، وتايبوجرافي.</p>
+  </div>
+  <div class="filters rv">
+    <button class="chip on" data-f="all">الكل</button>
+    <button class="chip" data-f="social">سوشيال ميديا</button>
+    <button class="chip" data-f="thumb">ثامبنيلز يوتيوب</button>
+  </div>
+  <div id="grid"></div>
+</section>
+
+<section id="about">
+  <div class="sec-head rv">
+    <h2><small class="en">ABOUT</small>عنّي</h2>
+  </div>
+  <div class="about-wrap">
+    <div class="about-txt rv">
+      <p>
+        أنا <b>عبدالله سيد</b> — مصمم جرافيك من مصر، معروف في الشغل باسم <b>Bodax</b>.
+        بدأت فري لانس في <b>٢٠٢٤</b> وأنا بصمم لحسابات تعليمية وتجارية، وحاليًا شغال
+        <b>Social Media Designer</b> في Teacher Planet.
+      </p>
+      <p>
+        أقوى نقطة عندي هي <b>الفوتو مانيبوليشن</b>: دمج صور حقيقية بإضاءة سينمائية لحد ما توصل فكرة الإعلان
+        في ثانية واحدة. بصمم ثامبنيلز يوتيوب بتفهم معنى الضغطة، ومحتوى تعليمي بيخلي المعلومة الصعبة سهلة على العين.
+      </p>
+      <div class="skills">
+        <span class="skill">Adobe Photoshop</span>
+        <span class="skill">Photo Manipulation</span>
+        <span class="skill">Social Media Design</span>
+        <span class="skill">YouTube Thumbnails</span>
+        <span class="skill">Educational Content</span>
+        <span class="skill">Ad Creatives</span>
+        <span class="skill">Arabic Typography</span>
+      </div>
+    </div>
+    <div class="xp rv">
+      <div class="xp-item">
+        <div class="role">Social Media Designer</div>
+        <div class="where">Teacher Planet</div>
+        <div class="when en">JUN 2026 — PRESENT</div>
+        <p>تصميم محتوى سوشيال ميديا وإعلانات لحسابات تعليمية.</p>
+      </div>
+      <div class="xp-item">
+        <div class="role">Graphic Designer — عمل مستقل</div>
+        <div class="where">Freelance</div>
+        <div class="when en">NOV 2024 — PRESENT</div>
+        <p>تصميمات سوشيال ميديا، ثامبنيلز يوتيوب، ومحتوى بصري لحسابات وبراندات تعليمية وتجارية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="rv">عندك فكرة؟<br><span>خلينا نحوّلها لتصميم يوقّف السكرول.</span></h2>
+  <p class="rv">متاح لمشاريع فري لانس وفرص شغل ريموت — ابعتلي تفاصيل المشروع وهرد عليك في أقرب وقت.</p>
+  <div class="rv">
+    <a class="btn btn-p" href="mailto:abdallah.sayed.boda66@gmail.com">ابعتلي إيميل ✉</a>
+  </div>
+  <div class="socials rv">
+    <a class="soc" href="https://www.behance.net/Bodax" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.7 6.5c0-.9-.3-1.6-.8-2.1-.5-.5-1.2-.8-2-.8h-4.4V19h4.6c.9 0 1.6-.3 2.1-.8.5-.6.8-1.3.8-2.2v-.2c0-.7-.1-1.3-.3-1.8zm-2.2-.9c.2.2.3.5.3.9s-.1.7-.3.9c-.2.2-.5.3-.9.3h-2.3v-2.1h2.3c.4 0 .7.1.9.3zm.4 4.7c-.2.2-.5.3-.9.3h-2.4v-2.3h2.4c.4 0 .7.1.9.3.2.2.3.5.3.9 0 .3-.1.6-.3.8zM9.3 8.9c.5-.5.8-1.2.8-2 0-.9-.3-1.6-.9-2.2C8.6 4.1 7.8 3.8 6.8 3.8H0v16.4h7c1.1 0 2-.4 2.7-1.1.7-.7 1-1.6 1-2.7 0-1-.3-1.8-.9-2.4-.1-.2-.3-.3-.5-.5zM2.4 6h4.1c.4 0 .7.1 1 .3.2.2.4.5.4.9s-.1.7-.4.9c-.2.2-.6.3-1 .3H2.4V6zm4.9 11.5c-.3.3-.7.4-1.2.4H2.4v-3.3h3.7c.5 0 .9.1 1.2.4.3.3.4.6.4 1.1s-.1 1-.4 1.4z"/></svg>
+      Behance
+    </a>
+    <a class="soc" href="https://www.linkedin.com/in/abdallahsayed66/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.4zM5.3 7.4a2 2 0 110-4.1 2 2 0 010 4.1zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>
+      LinkedIn
+    </a>
+    <a class="soc" href="https://www.instagram.com/bodax.design" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 3.6a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.5a1.4 1.4 0 100-2.9 1.4 1.4 0 000 2.9z"/></svg>
+      Instagram
+    </a>
+    <a class="soc" href="https://www.facebook.com/bodaxdesigner/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 10-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.8v8.4A12 12 0 0024 12z"/></svg>
+      Facebook
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span class="logo en">B<span style="color:var(--gold)">X</span></span>
+  <span>عبدالله سيد — Bodax © 2026</span>
+  <span class="en" style="letter-spacing:.2em; font-size:11px">DESIGNED TO STOP THE SCROLL</span>
+</footer>
+
+<div id="lb" role="dialog" aria-label="عرض التصميم">
+  <div class="lb-tools">
+    <button id="lbClose" aria-label="إغلاق">✕</button>
+    <span></span>
+  </div>
+  <button class="navb next" id="lbNext" aria-label="التالي">‹</button>
+  <img id="lbImg" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <button class="navb prev" id="lbPrev" aria-label="السابق">›</button>
+</div>
+
+<script>
+const WORKS = [
+  {f:'assets/social-4.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-4.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-2.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-8.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-7.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-1.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-1.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-5.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-3.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-7.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-5.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-2.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-8.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-3.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-6.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-6.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/social-9.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
+  {f:'assets/thumb-9.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/thumb-10.webp', c:'thumb',  t:'ثامبنيل يوتيوب'},
+];
+</script>
+<script>
+(function(){
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || /noanim/.test(location.hash+location.search);
+
+  /* ---- gallery build ---- */
+  const grid = document.getElementById('grid');
+  const frag = document.createDocumentFragment();
+  WORKS.forEach((w,i)=>{
+    const d = document.createElement('figure');
+    d.className = 'card'; d.dataset.c = w.c; d.dataset.i = i;
+    const img = document.createElement('img');
+    img.src = w.f; img.alt = w.t; img.loading = i<6?'eager':'lazy'; img.decoding='async';
+    const cap = document.createElement('figcaption');
+    cap.className='cap';
+    cap.innerHTML = '<span>'+w.t+'</span><em class="en">VIEW ↗</em>';
+    d.appendChild(img); d.appendChild(cap);
+    d.addEventListener('click', ()=>openLB(i));
+    frag.appendChild(d);
+  });
+  grid.appendChild(frag);
+
+  /* ---- filters ---- */
+  document.querySelectorAll('.chip').forEach(ch=>{
+    ch.addEventListener('click', ()=>{
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+      ch.classList.add('on');
+      const f = ch.dataset.f;
+      document.querySelectorAll('.card').forEach(card=>{
+        card.classList.toggle('hide', f!=='all' && card.dataset.c!==f);
+      });
+    });
+  });
+
+  /* ---- reveal on scroll ---- */
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('shown','in'); io.unobserve(e.target);} });
+  },{threshold:.08});
+  document.querySelectorAll('.card,.rv').forEach(el=>io.observe(el));
+
+  /* ---- hero work strip ---- */
+  const hw = document.getElementById('heroWork');
+  const strip = ['assets/social-4.webp','assets/thumb-4.webp','assets/social-2.webp','assets/thumb-8.webp',
+                 'assets/social-7.webp','assets/thumb-7.webp','assets/social-1.webp','assets/thumb-3.webp'];
+  const ncols = 4;
+  for(let c=0;c<ncols;c++){
+    const col=document.createElement('div');
+    col.className='col'+(c%2?' rev':'');
+    col.style.setProperty('--dur',(36+c*9)+'s');
+    const set=[...strip.slice(c*2),...strip.slice(0,c*2)];
+    [...set,...set].forEach(src=>{ const im=new Image(); im.src=src; im.alt=''; im.loading='lazy'; col.appendChild(im); });
+    hw.appendChild(col);
+  }
+
+  /* ---- marquee duplicate ---- */
+  const mq=document.getElementById('mqTrack'); mq.innerHTML+=mq.innerHTML;
+
+  /* ---- preloader (visual only, never blocks content) ---- */
+  const loader=document.getElementById('loader'), bar=document.getElementById('lbar'), pct=document.getElementById('lpct');
+  if(/flat/.test(location.search)){ document.querySelector('header').style.minHeight='unset'; }
+  if(reduced){ loader.remove(); document.querySelectorAll('.card,.rv').forEach(el=>el.classList.add('shown','in'));
+    document.documentElement.style.scrollBehavior='auto';
+    if(location.hash && location.hash.length>1){ setTimeout(()=>{ const t=document.querySelector(location.hash.replace('noanim','')||'#top'); t && t.scrollIntoView(); },60); } }
+  else{
+    let p=0;
+    const t=setInterval(()=>{
+      p=Math.min(100, p+Math.ceil(Math.random()*22)+8);
+      bar.style.width=p+'%'; pct.textContent=p+'%';
+      if(p>=100){ clearInterval(t); setTimeout(()=>loader.classList.add('done'), 220); }
+    },140);
+    setTimeout(()=>{ clearInterval(t); loader.classList.add('done'); }, 1800); // hard cap
+    loader.addEventListener('click',()=>loader.classList.add('done'));
+  }
+
+  /* ---- lightbox ---- */
+  const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
+  let cur=0;
+  const visible=()=>[...document.querySelectorAll('.card:not(.hide)')].map(c=>+c.dataset.i);
+  function openLB(i){ cur=i; show(); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function show(){ const w=WORKS[cur]; lbImg.src=w.f; lbImg.alt=w.t; lbCap.textContent=w.t; }
+  function step(d){ const v=visible(); const pos=v.indexOf(cur); cur=v[(pos+d+v.length)%v.length]; show(); }
+  function closeLB(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  document.getElementById('lbClose').onclick=closeLB;
+  document.getElementById('lbNext').onclick=()=>step(1);
+  document.getElementById('lbPrev').onclick=()=>step(-1);
+  lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
+  addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') closeLB();
+    if(e.key==='ArrowLeft') step(1);
+    if(e.key==='ArrowRight') step(-1);
+  });
+})();
+</script>
+</body>
+</html>
