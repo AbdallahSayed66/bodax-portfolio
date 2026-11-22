@@ -421,25 +421,39 @@ footer .logo{font-size:20px}
 
 <script>
 const WORKS = [
-  {f:'assets/social-4.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-4.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-2.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-8.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-7.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-1.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-1.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-5.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-3.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-7.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-5.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-2.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-8.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-3.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-6.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-6.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/social-9.webp', c:'social', t:'بوست سوشيال ميديا — تصميم إعلاني'},
-  {f:'assets/thumb-9.webp',  c:'thumb',  t:'ثامبنيل يوتيوب'},
-  {f:'assets/thumb-10.webp', c:'thumb',  t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-01.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-02.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-03.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-04.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-05.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-06.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-07.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-08.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-09.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-10.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-11.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-12.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-13.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-14.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-15.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-16.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-17.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-18.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-19.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-20.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-21.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-22.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-23.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-24.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-25.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-26.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-27.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-28.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-29.webp', c:'social', t:'بوست سوشيال ميديا'},
+  {f:'assets/work-30.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-31.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-32.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
+  {f:'assets/work-33.webp', c:'thumb', t:'ثامبنيل يوتيوب'},
 ];
 </script>
 <script>
@@ -483,8 +497,8 @@ const WORKS = [
 
   /* ---- hero work strip ---- */
   const hw = document.getElementById('heroWork');
-  const strip = ['assets/social-4.webp','assets/thumb-4.webp','assets/social-2.webp','assets/thumb-8.webp',
-                 'assets/social-7.webp','assets/thumb-7.webp','assets/social-1.webp','assets/thumb-3.webp'];
+  const strip = ['assets/work-22.webp','assets/work-02.webp','assets/work-30.webp','assets/work-05.webp',
+                 'assets/work-25.webp','assets/work-08.webp','assets/work-27.webp','assets/work-11.webp'];
   const ncols = 4;
   for(let c=0;c<ncols;c++){
     const col=document.createElement('div');
